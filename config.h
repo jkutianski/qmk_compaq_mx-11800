@@ -49,6 +49,9 @@
 #define BOOTMAGIC_BLINK 3
 #define BOOTMAGIC_BLINK_WAIT 200
 
+// Layer led blink time
+#define LAYER_BLINK_TIME 200
+
 // Trackball settings
 #ifdef PS2_USE_USART
 #define PS2_CLOCK_PORT  PORTD
