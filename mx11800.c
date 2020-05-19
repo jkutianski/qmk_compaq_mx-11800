@@ -32,26 +32,22 @@ void keyboard_pre_init_user(void) {
 
 // Set led state
 void led_set_user(uint8_t usb_led) {
-    uint8_t layer = biton32(layer_state);
+    if (usb_led & (1 << USB_LED_NUM_LOCK)) {
+        DDRD |= (1 << 6); PORTD &= ~(1 << 6);
+    } else {
+        DDRD &= ~(1 << 6); PORTD &= ~(1 << 6);
+    }
 
-    if (layer == 0) {
-        if (usb_led & (1 << USB_LED_NUM_LOCK)) {
-            DDRD |= (1 << 6); PORTD &= ~(1 << 6);
-        } else {
-            DDRD &= ~(1 << 6); PORTD &= ~(1 << 6);
-        }
+    if (usb_led & (1 << USB_LED_CAPS_LOCK)) {
+        DDRD |= (1 << 7); PORTD &= ~(1 << 7);
+    } else {
+        DDRD &= ~(1 << 7); PORTD &= ~(1 << 7);
+    }
 
-        if (usb_led & (1 << USB_LED_CAPS_LOCK)) {
-            DDRD |= (1 << 7); PORTD &= ~(1 << 7);
-        } else {
-            DDRD &= ~(1 << 7); PORTD &= ~(1 << 7);
-        }
-
-        if (usb_led & (1 << USB_LED_SCROLL_LOCK)) {
-            DDRB |= (1 << 7); PORTB &= ~(1 << 7);
-        } else {
-            DDRB &= ~(1 << 7); PORTB &= ~(1 << 7);
-        }
+    if (usb_led & (1 << USB_LED_SCROLL_LOCK)) {
+        DDRB |= (1 << 7); PORTB &= ~(1 << 7);
+    } else {
+        DDRB &= ~(1 << 7); PORTB &= ~(1 << 7);
     }
 }
 

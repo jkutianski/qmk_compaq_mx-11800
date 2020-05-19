@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include <print.h>
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -55,6 +56,8 @@ void keyboard_post_init_user(void) {
   // debug_matrix=true;
   // debug_keyboard=true;
   // debug_mouse=true;
+
+  dprint("DEBUG\n");
 }
 
 static uint16_t led_timer;
@@ -73,37 +76,27 @@ void matrix_scan_user(void) {
                 break;
             case 1:
                 if (!led_layer_state) {
-                    DDRD &= ~(1 << 6); PORTD &= ~(1 << 6);
+                    led_set_user(0);
                 } else {
-                    DDRD |= (1 << 6); PORTD &= ~(1 << 6);
+                    led_set_user(1);
                 }
-
-                DDRD &= ~(1 << 7); PORTD &= ~(1 << 7);
-                DDRB &= ~(1 << 7); PORTB &= ~(1 << 7);
 
                 led_layer_state = !led_layer_state;
                 break;
             case 2:
-                DDRD &= ~(1 << 6); PORTD &= ~(1 << 6);
-
                 if (!led_layer_state) {
-                    DDRD &= ~(1 << 7); PORTD &= ~(1 << 7);
+                    led_set_user(0);
                 } else {
-                    DDRD |= (1 << 7); PORTD &= ~(1 << 7);
+                    led_set_user(2);
                 }
-
-                DDRB &= ~(1 << 7); PORTB &= ~(1 << 7);
 
                 led_layer_state = !led_layer_state;
                 break;
             case 3:
-                DDRD &= ~(1 << 6); PORTD &= ~(1 << 6);
-                DDRD &= ~(1 << 7); PORTD &= ~(1 << 7);
-
                 if (!led_layer_state) {
-                    DDRB &= ~(1 << 7); PORTB &= ~(1 << 7);
+                    led_set_user(0);
                 } else {
-                    DDRB |= (1 << 7); PORTB &= ~(1 << 7);
+                    led_set_user(4);
                 }
 
                 led_layer_state = !led_layer_state;
