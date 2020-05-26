@@ -1,0 +1,6 @@
+[submodule "KLE/Layout"]
+	path = KLE/Layout
+	url = https://gist.github.com/jkutianski/bcccb8af48ded2763e0759ac7019b396
+[submodule "KLE/Wiring map"]
+	path = KLE/Wiring map
+	url = https://gist.github.com/2867d154176ffe70a408807e4be47f30.git
