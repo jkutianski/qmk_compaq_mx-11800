@@ -6,6 +6,7 @@ Features:
 - Trackball scroll with bottom button pressed (rigth one for the point of view of the mouse)
 - Via support
 - 12 layers configured by VIA
+- 16 global macros configured by VIA
 - Predefined tap dance for use on VIA
   - Num Lock / Calculator (0x5700)
   - Enter / Tab (0x5701)
