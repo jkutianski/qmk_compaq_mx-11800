@@ -1,6 +1,9 @@
 # MCU name
 MCU = at90usb1286
 
+# Bootloader selection
+BOOTLOADER = halfkay
+
 # Processor frequency.
 #     This will define a symbol, F_CPU, in all source code files equal to the
 #     processor frequency in Hz. You can then use this symbol in your source code to
@@ -36,11 +39,6 @@ F_USB = $(F_CPU)
 # Interrupt driven control endpoint task(+60)
 OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 
-
-# Boot Section Size
-BOOTLOADER = halfkay
-# OPT_DEFS += -DBOOTLOADER_SIZE=1024
-
 # Build Options
 #   change to "no" to disable the options, or define them in the Makefile in
 #   the appropriate keymap folder that will get included automatically
@@ -62,8 +60,26 @@ RGBLIGHT_ENABLE = no		# Enable WS2812 RGB underlight.
 SLEEP_LED_ENABLE = no		# Breathing sleep LED during USB suspend
 
 # PS2 Trackball
-# PS2_MOUSE_ENABLE = yes	# Ports used D2 & D5
-# PS2_USE_USART = yes
+PS2_MOUSE_ENABLE = yes	# Ports used D2 & D5
+PS2_USE_USART = yes
+# PS2_USE_INT = yes
 
+# Firmware format
 FIRMWARE_FORMAT = hex
+
+# Optimization
 LTO_ENABLE = yes
+
+# AUDIO_ENABLE = yes
+
+# Serial number from command line
+OPT_DEFS += -DSERIAL_NUMBER=$(SERIAL_NUMBER)
+
+# Added ACTION_TAP_DANCE_SHIFTED
+SRC +=  ../../tap_dance.c
+
+# Added HW Serial Number on AVR
+# SRC +=  ../../avr_serial_number.c
+
+# Set development
+OPT_DEFS += -DDEVELOPMENT=$(devel)
