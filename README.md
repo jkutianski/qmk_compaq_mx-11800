@@ -18,7 +18,7 @@ Features:
 New brain (from someone called A.B.Normal)
 ![Brain transplat](https://i.imgur.com/iQfXFWI.jpg)
 
-The final result with USB type B cable pluged in.
+The final result with USB type B cable plugged in.
 ![Final](https://i.imgur.com/v2J0wpM.jpg)
 
 VIA in action
