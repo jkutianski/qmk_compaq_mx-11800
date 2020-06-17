@@ -15,8 +15,14 @@ Features:
   - shifted simbols for 4rd alfanumeric row (0x5716, 0x5716 & 0x5717)
 - Layer indicator with blinking leds
 
+New brain (from someone called A.B.Normal)
 ![Brain transplat](https://i.imgur.com/iQfXFWI.jpg)
 
+The final result with USB type B cable pluged in.
 ![Final](https://i.imgur.com/v2J0wpM.jpg)
 
+VIA in action
 ![VIA configurator](https://i.imgur.com/ASb5kM9.png)
+
+The brainfuck wiring designed by Cherry for this PCB
+![Brainfuck wiring](https://github.com/jkutianski/qmk_compaq_mx-11800/blob/master/docs/wirings.png?raw=true)
