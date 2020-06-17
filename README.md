@@ -3,7 +3,7 @@ This is a Compaq MX11800 keyboard with Teensy++2.0 as main processor running QMK
 
 Features:
 - Trackball sensitivity corrected
-- Trackball scroll with top button pressed (rigth one for the point of view of the mouse)
+- Trackball scroll with bottom button pressed (rigth one for the point of view of the mouse)
 - Via support
 - 12 layers configured by VIA
 - Predefined tap dance for use on VIA
